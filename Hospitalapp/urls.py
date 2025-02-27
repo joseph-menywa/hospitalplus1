@@ -4,8 +4,14 @@ from django.urls import path
 from Hospitalapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
     path('', views.index,name='home'),
     path('service/', views.service,name='services'),
     path('starter/', views.starter,name='starter'),
+    path('about/', views.about,name='about'),
+    path('services/', views.services,name='services'),
+    path('departmets/', views.departments,name='departments'),
+    path('doctors/', views.doctors,name='doctors'),
+    path('contact/', views.contact,name='contact'),
+    path('appointment/', views.appointment,name='appointment'),
 ]
