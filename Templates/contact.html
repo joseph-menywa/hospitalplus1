@@ -49,8 +49,9 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            <form  method="post" >
               <div class="row gy-4">
+                  {% csrf_token %}
 
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
@@ -79,4 +80,6 @@
               </div>
             </form>
           </div><!-- End Contact Form -->
+
+
 {% endblock %}
