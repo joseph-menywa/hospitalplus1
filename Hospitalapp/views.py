@@ -25,7 +25,7 @@ def doctors(request):
     return render(request, 'doctors.html')
 
 def appointment(request):
-    if request.method == "post":
+    if request.method == "POST":
         myappointments = Appointment(
             name = request.POST['name'],
             email = request.POST['email'],
@@ -33,22 +33,22 @@ def appointment(request):
             date = request.POST['date'],
             department = request.POST['department'],
             doctor = request.POST['doctor'],
-            message = request.POST['message'],
+            message = request.POST['message']
 
     )
 
         myappointments.save()
-        return redirect('/Appointment')
+        return redirect('/show')
     else:
         return render(request,'appointment.html')
 
 def contact(request):
-    if request.method == "post":
+    if request.method == "POST":
         mycontacts = Contact(
             name = request.POST['name'],
             email = request.POST['email'],
             subject = request.POST['subject'],
-            message = request.POST['message'],
+            message = request.POST['message']
 
     )
 
@@ -57,4 +57,11 @@ def contact(request):
     else:
         return render(request,'contact.html')
 
+def show(request):
+    all = Appointment.objects.all()
+    return render(request,'show.html',{'all':all})
 
+def delete(request,id):
+    deleteappointment = Appointment.objects.get(id=id)
+    deleteappointment.delete()
+    return redirect('/show')
