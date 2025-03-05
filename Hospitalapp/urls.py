@@ -5,7 +5,7 @@ from Hospitalapp import views
 
 urlpatterns = [
 
-    path('', views.index,name='home'),
+    path('home/', views.index,name='home'),
     path('service/', views.service,name='services'),
     path('starter/', views.starter,name='starter'),
     path('about/', views.about,name='about'),
@@ -16,4 +16,7 @@ urlpatterns = [
     path('appointment/', views.appointment,name='appointment'),
     path('show/', views.show,name='show'),
     path('delete/<int:id>', views.delete),
+    path('edit/<int:id>', views.edit,name='edit'),
+    path('', views.register,name='register'),
+    path('login/', views.login_view,name='login'),
 ]
