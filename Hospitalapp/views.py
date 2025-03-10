@@ -88,8 +88,7 @@ def edit(request,id):
     else:
        return render(request,'edit.html',{'appointment':appointment})
 
-def register(request):
-    return render(request,'register.html')
+
 
 def login_view(request):
     if request.method == "POST":
